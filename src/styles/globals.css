@@ -11,6 +11,12 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -26,6 +32,14 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  color: inherit;
 }
 
 .app-shell {
@@ -51,6 +65,17 @@ p {
   margin-top: 0;
 }
 
+h1 {
+  margin-bottom: 0.5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+}
+
 .lede {
   max-width: 60ch;
   opacity: 0.9;
@@ -72,8 +97,86 @@ p {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
 }
 
+.field {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.field span,
+.label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+}
+
+textarea,
+input,
+select,
+button {
+  width: 100%;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 0.9rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 14rem;
+}
+
+button {
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.button-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.pathway {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.cluster-list {
+  padding-left: 1.1rem;
+  margin: 0;
+}
+
+.cluster-list li + li {
+  margin-top: 0.85rem;
+}
+
+.cluster-fragments {
+  margin-top: 0.25rem;
+  opacity: 0.85;
+}
+
+.archive-message {
+  opacity: 0.85;
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .app-shell {
+    padding: 2rem 1rem 3rem;
   }
 }
